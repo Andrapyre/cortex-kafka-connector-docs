@@ -9,7 +9,7 @@ menu:
   docs:
     parent: ""
     identifier: "metrics-aedd0f96a1483d1096274cd2c5f57f69"
-weight: 999
+weight: 250
 toc: true
 seo:
   title: "" # custom title (optional)

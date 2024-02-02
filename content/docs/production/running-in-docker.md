@@ -9,7 +9,7 @@ menu:
   docs:
     parent: ""
     identifier: "running-in-docker-84e6e76c844e8126222ba57d220c8bc3"
-weight: 999
+weight: 240
 toc: true
 seo:
   title: "" # custom title (optional)

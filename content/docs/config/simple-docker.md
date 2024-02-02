@@ -9,7 +9,7 @@ menu:
   docs:
     parent: ""
     identifier: "simple-docker-86779ef54ee397206c5b14b876da1def"
-weight: 20
+weight: 120
 toc: true
 seo:
   title: "" # custom title (optional)

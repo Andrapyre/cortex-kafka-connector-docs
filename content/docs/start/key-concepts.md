@@ -20,6 +20,10 @@ seo:
 
 See the Kafka Connect documentation [here](https://kafka.apache.org/documentation/#connect_overview) to begin.
 
+### Connector Types
+
+There are two types of kafka connectors - source connectors and sink connectors. The cortex sink connector reads message from one or multiple kafka topics and dumps the result into an instance of a cortex database. The cortex source connector reads data containing a specified primary key within the cortex database and writes this data to kafka. Currently the source connector operates as a sort of lift-and-shift - it does not react in real time to data changes within the cortex database.
+
 ### Creating/Updating Records (Sink)
 
 Users can determine whether they would like the kafka sink connector to update records based on a primary key via the `cortex.record.update.type` property. `overwrite_first` is the default strategy. If it is set, an error will be thrown if no primary key is specified. If a primary key is specified, the sink connector will search for the first record with a corresponding primary key value found in the incoming record. If such a record is found, it will update it. Otherwise, it will create a new one. The `create_new` strategy bypasses any search for a pre-existing record and simply creates a new record in the Cortex database every time it processes one. If `create_new` is specified, no primary key is required.
@@ -32,4 +36,4 @@ Users can take advantage of the `cortex.mappings.fields` property to map kafka f
 
 ### Message Transformation
 
-Kafka natively supports writing custom transformers which take the message output from one topic, change the data structure/content of the messages with optional filtering, and dump the result in another topic. For simple transformation use cases, this puts a clear burden on the user. For this reason, the cortex kafka connector supports transformation *via configuration* for simple use cases. Currently, the connector only supports adding new fields. In order to configure message transformation, users must set up an advanced config file, documented [here](/docs/config/advanced)
+Kafka natively supports writing custom transformers which take the message output from one topic, change the data structure/content of the messages with optional filtering, and dump the result in another topic. For simple transformation use cases, this puts a clear burden on the user. For this reason, the cortex kafka connector supports transformation *via configuration* for simple use cases. Currently, the connector only supports adding new fields to the message payload via the `additionalData` key. In order to configure message transformation, users must set up an advanced config file, documented [here](/docs/config/advanced)

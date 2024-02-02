@@ -9,7 +9,7 @@ menu:
   docs:
     parent: ""
     identifier: "simple-conf-kafka-props-4e0d0e0f89f7decc11eaad4ae9193018"
-weight: 10
+weight: 110
 toc: true
 seo:
   title: "" # custom title (optional)

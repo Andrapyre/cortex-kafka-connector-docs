@@ -1,15 +1,15 @@
 ---
-title: "Jar Files"
+title: "Streaming From Multiple Sources"
 description: ""
 summary: ""
-date: 2024-02-01T23:35:16+01:00
-lastmod: 2024-02-01T23:35:16+01:00
+date: 2024-02-02T02:30:49+01:00
+lastmod: 2024-02-02T02:30:49+01:00
 draft: false
 menu:
-  releases:
+  docs:
     parent: ""
-    identifier: "releases-jar-files-9602b15bad02600f3883f55e2ade6b81"
-weight: 999
+    identifier: "streaming-from-multiple-sources-8180916cd0e3f964effd9d610deb9006"
+weight: 300
 toc: true
 seo:
   title: "" # custom title (optional)
@@ -18,4 +18,4 @@ seo:
   noindex: false # false (default) or true
 ---
 
-Help
+### Architecture

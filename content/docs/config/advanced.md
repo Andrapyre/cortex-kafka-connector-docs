@@ -9,7 +9,7 @@ menu:
   docs:
     parent: ""
     identifier: "advanced-4e0d0e0f89f7decc11eaad4ae9193018"
-weight: 800
+weight: 130
 toc: true
 seo:
   title: "" # custom title (optional)
@@ -17,10 +17,6 @@ seo:
   canonical: "" # custom canonical URL (optional)
   noindex: false # false (default) or true
 ---
-
-### Message Transformation
-
-Kafka natively supports writing custom transformers which take the message output from one topic, change the data structure/content of the messages with optional filtering, and dump the result in another topic. For simple transformation use cases, this puts a clear burden on the user. For this reason, the cortex kafka connector supports transformation *via configuration* for simple use cases. Currently, the connector only supports adding new fields to the message payload via the `additionalData` key.
 
 ### Variables
 
@@ -42,7 +38,7 @@ See the following advanced config file with notes about which keys are required 
 
 ```yaml
 sink: # Required
-   default: # Optional. Default: None
+   default: # Optional. Default - None
       messageTransform: # Required
          additionalData: # Required.
           # The following is sample data. 
@@ -50,19 +46,23 @@ sink: # Required
           # Keys and values must be strings
             orgName: cortex
             source: $topicName
-   topics: # Optional. Default: None
+   topics: # Optional. Default - None
       - name: cortex-sink-1 # Required
         messageTransform: # Required
            additionalData: # Required
               dept: engineering
               time: $timestamp
-        ignoreDefault: true # Optional. Default: false
+        ignoreDefault: true # Optional. Default - false
       - name: cortex-sink-2
         messageTransform:
            additionalData:
               dept: marketing
               stamp: $timestamp
 ```
+
+### Running in Production
+
+Each production environment comes with different constraints for loading the advanced config file. Please see the [production](/docs/production) section for details on how to deploy the advanced config file.
 
 ### Important Notes
 

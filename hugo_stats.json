@@ -176,7 +176,6 @@
       "mt-n3",
       "mx-2",
       "mx-auto",
-      "mx-xl-auto",
       "my-3",
       "nav",
       "nav-item",
@@ -250,8 +249,10 @@
     "ids": [
       "TableOfContents",
       "advanced",
+      "architecture",
       "buttonColorMode",
       "configuration-types",
+      "connector-types",
       "cortex-config",
       "cortex-specific",
       "creatingupdating-records-sink",
@@ -271,6 +272,9 @@
       "offcanvasNavSectionLabel",
       "primary-key",
       "query",
+      "running-in-confluent",
+      "running-in-msk",
+      "running-in-production",
       "running-the-service",
       "sample-config-file",
       "sample-service-configuration",
@@ -280,6 +284,7 @@
       "searchResults",
       "searchToggleDesktop",
       "searchToggleMobile",
+      "section-45389ee90014e0938cb09409b9a8794d",
       "section-756d97bb256b8580d4d71ee0c547804e",
       "section-a6122a65eaa676f700ae68d393054a37",
       "section-fa535ffb25e1fd20341652f9be21e06e",
@@ -289,6 +294,8 @@
       "toc",
       "usage",
       "variables",
+      "vm-or-bare-metal",
+      "ways-to-run-the-kafka-connector",
       "worker-config"
     ]
   }
