@@ -23,7 +23,7 @@ seo:
 1. Make sure that you have an instance of a cortex database and a kafka cluster already running, with a kafka topic created and messages produced to the topic.
 2. Download the relevant kafka binary [here](https://kafka.apache.org/downloads)
 3. Download the latest release of the connector plugin [here](/releases/jar-files)
-4. Go to the kafka binary and run something like the following (adjust the config files as described in the [simple config](/config/simple-kafka-properties) section - make sure that the jar in the `./output` folder is referenced, as well as the topic that you created in the previous step):
+4. Go to the kafka binary and run something like the following (adjust the config files as described in the [simple config](/config/simple-kafka-properties) section - make sure that the plugin jar from step 3 is referenced, as well as the topic that you created in the previous step):
    ```sh
     bin/connect-standalone.sh config/connect-standalone.properties config/connect-file-sink.properties
    ```

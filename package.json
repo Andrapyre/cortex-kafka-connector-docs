@@ -5,7 +5,7 @@
   "author": "Hyas",
   "license": "MIT",
   "scripts": {
-    "dev": "exec-bin node_modules/.bin/hugo/hugo server --bind=0.0.0.0 --disableFastRender --baseURL=http://localhost --noHTTPCache",
+    "dev": "exec-bin node_modules/.bin/hugo/hugo server --bind=0.0.0.0 --disableFastRender --baseURL=http://localhost --noHTTPCache --logLevel debug",
     "dev:drafts": "exec-bin node_modules/.bin/hugo/hugo server --bind=0.0.0.0 --disableFastRender --baseURL=http://localhost --noHTTPCache --buildDrafts",
     "create": "exec-bin node_modules/.bin/hugo/hugo new",
     "lint": "npm run lint:scripts && npm run lint:styles && npm run lint:markdown",
@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "@hyas/doks-core": "^1.3.0",
-    "@hyas/images": "^2.0.3",
+    "@hyas/images": "3.1.0",
     "@hyas/inline-svg": "^1.0.5",
     "@hyas/seo": "^2.1.0",
     "@tabler/icons": "^2.40.0",

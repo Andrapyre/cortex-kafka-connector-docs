@@ -72,3 +72,17 @@ services:
 ```sh
 docker compose up
 ```
+
+
+### Advanced Config
+
+Load the advanced config file into the path `/cortex/config.yml` in the container. In docker compose, assuming a file with the name of `advanced-config.yml` in your project root, add the following lines to your compose file:
+
+```yaml
+version: '3.8'
+services:
+  kafka-connect-sink:
+    # ----------
+    volumes:
+    - ./advanced-config.yml:/cortex/config.yml
+```
