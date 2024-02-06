@@ -77,8 +77,6 @@ services:
       CORTEX_CONNECTION_PASSWORD: "admin"
       CORTEX_CONNECTION_APP_NAME: "TestApp"
       CORTEX_CONNECTION_APP_HASH: "K1cyPPmWtVGVNE8rb4pkcZ3K5OGAqMSwLUBxRDkBQJg="
-      CORTEX_FIELD_MAPPINGS: "test-id:testId"
-      CORTEX_DATABASE_PRIMARY_KEY: "testId"
       KAFKA_CONNECT_ERROR_TOLERANCE: "all"
       KAFKA_CONNECT_SINK_TOPICS: "cortex-sink"
       KAFKA_CONNECT_SINK_DLQ_TOPIC_NAME: "cortex-sink-dlq"
@@ -101,7 +99,7 @@ services:
       CORTEX_CONNECTION_PASSWORD: "user"
       CORTEX_CONNECTION_APP_NAME: "TestApp"
       CORTEX_CONNECTION_APP_HASH: "K1cyPPmWtVGVNE8rb4pkcZ3K5OGAqMSwLUBxRDkBQJg="
-      CORTEX_DATABASE_PRIMARY_KEY: "testId"
+      CORTEX_SOURCE_PRIMARY_KEY: "testId"
       KAFKA_CONNECT_ERROR_TOLERANCE: "all"
       KAFKA_CONNECT_SOURCE_OFFSET_PARTITION_NAME: "copy_existing"
       KAFKA_CONNECT_SOURCE_OFFSETS_STORAGE_TOPIC: "offsets"
@@ -122,21 +120,17 @@ docker compose up
 
 3. Make sure the `cortex-sink` topic is created. If it is not already created, create it with one partition.
 
-4. Start to create a new message and paste the following values for the key and value respectively
-
-Key: 
-```json
-359c46bb-317a-48b4-b95c-181e1dc707df
-```
+4. Start to create a new message. Leave the message key blank and paste the following in for the message value:
 
 Value: 
 ```json
 {
+    "testId": "359c46bb-317a-48b4-b95c-181e1dc707df",
     "key": "value",
     "time": 123481234
 }
 ```
 
+5. After creating this message in the `cortex-sink` topic wait a few moments and you should eventually see this message appear in the `cortex-source` topic. 
 
-
-
+Congratulations! You've streamed your first message in and out of a cortex database!

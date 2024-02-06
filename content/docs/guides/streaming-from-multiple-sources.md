@@ -121,7 +121,7 @@ sink:
       - name: car_speed
         messageTransform:
           additionalData:
-            source: $topic
+            source: $topicName
           renamedFields:
             avgSpeed: carSpd
             timestamp: timest
