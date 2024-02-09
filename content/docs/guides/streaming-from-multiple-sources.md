@@ -105,14 +105,14 @@ sink:
    topics:
       - name: car_fuel
         messageTransform:
-          renamedFields:
+          fieldNameMapping:
             capacity: fuelCap
         dbWriteStrategy:
           recordUpdateType: overwrite_first
           primaryKey: carId
       - name: car_location
         messageTransform:
-          renamedFields:
+          fieldNameMapping:
             latitude: carLat
             longitude: catLong
         dbWriteStrategy:
@@ -122,7 +122,7 @@ sink:
         messageTransform:
           additionalData:
             source: $topicName
-          renamedFields:
+          fieldNameMapping:
             avgSpeed: carSpd
             timestamp: timest
         dbWriteStrategy:
@@ -131,7 +131,7 @@ sink:
         ignoreDefault: true
       - name: car_safety
         messageTransform:
-          renamedFields:
+          fieldNameMapping:
             car: carId
             event_type: carSfEv
 ```

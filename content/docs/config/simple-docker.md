@@ -49,7 +49,7 @@ seo:
 `CORTEX_CONNECTION_APP_NAME`: `cortex.connection.app.name` <br/>
 `CORTEX_CONNECTION_APP_HASH`: `cortex.connection.app.hash` <br/>
 `CORTEX_SOURCE_PRIMARY_KEY`: `cortex.source.primary.key` <br/>
-`CORTEX_FIELD_MAPPINGS`: `cortex.mappings.fields` <br/>
+`CORTEX_SOURCE_FIELD_MAPPINGS`: `cortex.source.field.mappings` <br/>
 `CORTEX_RECORD_UPDATE_TYPE`: `cortex.record.update.type` <br/>
 
 ### General Connector Config

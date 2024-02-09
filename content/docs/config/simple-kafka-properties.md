@@ -37,7 +37,7 @@ seo:
 `cortex.connection.username`: The username used to authenticate to the Cortex database. <br/>
 `cortex.connection.password`: The password used to authenticate to the Cortex database. <br/>
 `cortex.source.primary.key`: The primary key that the source connector will use when pulling data from the cortex database <br/>
-`cortex.mappings.fields` _(Optional)_: The field name mappings from the fields in the kafka topic to the fields in the Cortex database. Valid syntax: kafkaFieldName:cortexFieldName,secondKafkaFieldName:secondCortexFieldName <br/>
+`cortex.source.field.mappings` _(Optional)_: The field name mappings from the fields in the kafka topic to the fields in the Cortex database. Valid syntax: kafkaFieldName:cortexFieldName,secondKafkaFieldName:secondCortexFieldName <br/>
 `cortex.record.update.type`: The strategy used for determining how records are to be updated. Valid values: `create_new` and `overwrite_first` (*default*). <br/>
 
 ### Dead Letter Queue (Optional)
