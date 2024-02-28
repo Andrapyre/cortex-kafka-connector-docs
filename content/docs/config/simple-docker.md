@@ -50,7 +50,8 @@ seo:
 `CORTEX_CONNECTION_APP_HASH`: `cortex.connection.app.hash` <br/>
 `CORTEX_SOURCE_PRIMARY_KEY`: `cortex.source.primary.key` <br/>
 `CORTEX_SOURCE_FIELD_MAPPINGS`: `cortex.source.field.mappings` <br/>
-`CORTEX_RECORD_UPDATE_TYPE`: `cortex.record.update.type` <br/>
+`CORTEX_CONFIG_FILE_AWS_S3_BUCKET_NAME`: `cortex.config.file.aws.s3.bucket.name` <br/>
+`CORTEX_CONFIG_FILE_AWS_S3_OBJECT_KEY`: `cortex.config.file.aws.s3.object.key` <br/>
 
 ### General Connector Config
 `KAFKA_CONNECT_MAX_TASKS`: `tasks.max` <br/>

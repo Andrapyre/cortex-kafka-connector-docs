@@ -24,7 +24,7 @@ seo:
 `connector.class`: Should be `com.cortex.kafka.connector.CortexSinkConnector` for a kafka-to-cortex integration and `com.cortex.kafka.connector.CortexSourceConnector` for a cortex-to-kafka integration. <br/>
 `bootstrap.servers`: The kafka (not zookeeper) cluster hostname with port. <br/>
 `key.converter`: Key converter class name: Ex: `org.apache.kafka.connect.storage.StringConverter` <br/>
-`value.converter`: Value converter class name: Ex: `oorg.apache.kafka.connect.storage.StringConverter` <br/>
+`value.converter`: Value converter class name: Ex: `org.apache.kafka.connect.storage.StringConverter` <br/>
 `group.id`: The connector group id. Required if running Kafka Connect in distributed mode. Can be any id that does not conflict with a group id that is currently in use. <br/>
 
 ### Cortex Specific
@@ -38,7 +38,8 @@ seo:
 `cortex.connection.password`: The password used to authenticate to the Cortex database. <br/>
 `cortex.source.primary.key`: The primary key that the source connector will use when pulling data from the cortex database <br/>
 `cortex.source.field.mappings` _(Optional)_: The field name mappings from the fields in the kafka topic to the fields in the Cortex database. Valid syntax: kafkaFieldName:cortexFieldName,secondKafkaFieldName:secondCortexFieldName <br/>
-`cortex.record.update.type`: The strategy used for determining how records are to be updated. Valid values: `create_new` and `overwrite_first` (*default*). <br/>
+`cortex.config.file.aws.s3.bucket.name`: The AWS S3 bucket name containing the advanced config file <br/>
+`cortex.config.file.aws.s3.object.key`: The advanced config file's object key when stored in AWS S3 <br/>
 
 ### Dead Letter Queue (Optional)
 `errors.tolerance`: Set to `all` to enable the dead letter queue. <br/>

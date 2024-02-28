@@ -62,7 +62,23 @@ sink: # Required
 
 ### Running in Production
 
-Each production environment comes with different constraints for loading the advanced config file. Please see the [production](/docs/production) section for details on how to deploy the advanced config file.
+The Cortex kafka connector currently supports retrieving advanced config files from local storage or from AWS S3. See below to configure each option:
+
+#### Local Storage
+
+In order for the connector to load an advanced config file from local storage, the file needs to be present at the path: `/cortex/config.yml`.
+
+#### AWS S3
+
+To load an advanced config file from AWS S3, upload your config file to S3 and make sure that the following properties are specified accordingly: 
+`cortex.config.file.aws.s3.bucket.name` - the file's bucket name
+`cortex.config.file.aws.s3.object.key` - the file's object key
+
+Additionally, make sure that the service running the connector has an IAM role that can directly access the object in S3.
+
+#### Limitations
+
+There is currently no support for loading a config file in S3 from a separate AWS account or when the connector is not running in an AWS environment at all.
 
 ### Important Notes
 

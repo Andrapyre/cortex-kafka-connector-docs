@@ -22,14 +22,14 @@ See the Kafka Connect documentation [here](https://kafka.apache.org/documentatio
 
 ### Connector Types
 
-There are two types of kafka connectors - source connectors and sink connectors. The cortex sink connector reads message from one or multiple kafka topics and dumps the result into an instance of a cortex database. The cortex source connector reads data containing a specified primary key within the cortex database and writes this data to kafka. Currently the source connector is experimental. 
+There are two types of kafka connectors - source connectors and sink connectors. The cortex sink connector reads messages from one or multiple kafka topics and dumps the result into an instance of a cortex database. The cortex source connector reads data containing a specified primary key within the cortex database and writes this data to kafka. Currently the source connector is experimental. 
 
 ### Primary Key (Sink)
 
 Users can optionally set a primary key with a database write strategy via the [advanced config file](/docs/config/advanced). If the primary key is set in the config, the sink connector will read a message from Kafka and determine if the key is a simple string or a json string/map (a composite key). If the former, it will create an entry in the value of primaryKey:kafkaKeyValue. If the latter, it will look for the primary key value in the map structure and add that to the value body to be written into the Cortex database. If no key is specified in the message, it will look for the primary key in the value body and throw an error if none is found.
 
 ### Primary Key (Source)
-The source connector requires that the `cortex.source.primary.key` property is set. The field type must be a string and the source connector will then query the cortex database for all records containing this field.connector operates as a sort of lift-and-shift - it does not react in real time to data changes within the cortex database.
+The source connector requires that the `cortex.source.primary.key` property is set. The field type must be a string and the source connector will then query the cortex database for all records containing this field. The source connector operates as a sort of lift-and-shift - it does not react in real time to data changes within the cortex database.
 
 ### Database Write Strategy (Sink)
 
