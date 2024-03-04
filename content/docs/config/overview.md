@@ -20,8 +20,8 @@ seo:
 
 ### Configuration Types
 
-There are two ways to configure the cortex kafka connector. One way is through kafka properties files and the other is through environment variables (only supported in docker). The docker image has built-in support for environment variable configuration. Before the connector runs, these environment variables are converted to two properties files which are then loaded into the connector. Environment variables are supported to enable ease of use.
+There are two ways to configure the cortex kafka connector. One way is through kafka properties files, supported in every production environment. If the connector is running in docker, users can optionally configure environment variables for the docker image which will be converted into kafka properties.
 
 ### Advanced
 
-Advanced configuration is currently only supported for docker instances.
+Advanced configuration is currently only supported for docker instances, as well as for AWS MSK via S3.

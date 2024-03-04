@@ -18,6 +18,10 @@ seo:
   noindex: false # false (default) or true
 ---
 
+## Kafka Properties 
+
+The following properties should be set according to the java properties format, described [here](https://docs.oracle.com/cd/E23095_01/Platform.93/ATGProgGuide/html/s0204propertiesfileformat01.html).
+
 ### General
 
 `plugin.path`: The full path to the Cortex connector jar <br/>

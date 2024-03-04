@@ -18,6 +18,10 @@ seo:
   noindex: false # false (default) or true
 ---
 
+## Environment Variables
+
+The Cortex kafka connector docker image can be configured via the environment variables below:
+
 ### Worker Config
 `KAFKA_CONNECT_PLUGIN_PATH`: `plugin.path` <br/>
 `KAFKA_CONNECT_BOOTSTRAP_SERVERS`: `bootstrap.servers` <br/>
@@ -79,3 +83,7 @@ seo:
 `KAFKA_CONNECT_SOURCE_OFFSETS_STORAGE_TOPIC`: `offsets.storage.topic` <br/>
 `KAFKA_CONNECT_SOURCE_OFFSET_PARTITION_NAME`: `offset.partition.name` <br/>
 `KAFKA_CONNECT_SOURCE_DESTINATION_TOPIC_NAME`: `topic.name` <br/>
+
+## Kafka Properties File
+
+If users wish to set kafka properties which are not present in the above list, they need to mount a file at the following location in the docker image: `/cortex/connector.properties`. Properties set in this file will take precedence over properties configured via environment variables. Properties should be set according to the java properties format, described [here](https://docs.oracle.com/cd/E23095_01/Platform.93/ATGProgGuide/html/s0204propertiesfileformat01.html).
